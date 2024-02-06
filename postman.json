@@ -1,0 +1,523 @@
+{
+	"info": {
+		"_postman_id": "f201d13c-3b40-4662-acf8-a4396736b267",
+		"name": "football-data.org v4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2729645"
+	},
+	"item": [
+		{
+			"name": "Area",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/areas/:area",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"areas",
+						":area"
+					],
+					"variable": [
+						{
+							"key": "area",
+							"value": "2220"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Area List",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/areas",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"areas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Competition",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/competitions/:competition",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"competitions",
+						":competition"
+					],
+					"variable": [
+						{
+							"key": "competition",
+							"value": "PL"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Competition List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/competitions",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"competitions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Competition / Standings",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/competitions/:competition/standings?season=2010&matchday=3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"competitions",
+						":competition",
+						"standings"
+					],
+					"query": [
+						{
+							"key": "season",
+							"value": "2010"
+						},
+						{
+							"key": "matchday",
+							"value": "3"
+						}
+					],
+					"variable": [
+						{
+							"key": "competition",
+							"value": "PL"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Competition / Matches",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/competitions/:competition/matches?matchday=23",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"competitions",
+						":competition",
+						"matches"
+					],
+					"query": [
+						{
+							"key": "matchday",
+							"value": "23"
+						}
+					],
+					"variable": [
+						{
+							"key": "competition",
+							"value": "BL1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Competition / Teams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/competitions/:competition/teams",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"competitions",
+						":competition",
+						"teams"
+					],
+					"variable": [
+						{
+							"key": "competition",
+							"value": "MLS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Competition / Scorer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/competitions/:competition/scorers",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"competitions",
+						":competition",
+						"scorers"
+					],
+					"variable": [
+						{
+							"key": "competition",
+							"value": "PL"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/teams/:team",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"teams",
+						":team"
+					],
+					"variable": [
+						{
+							"key": "team",
+							"value": "90"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/teams?limit=100&offset=100",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"teams"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "100"
+						},
+						{
+							"key": "offset",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team / Matches",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/teams/:team/matches",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"teams",
+						":team",
+						"matches"
+					],
+					"variable": [
+						{
+							"key": "team",
+							"value": "19"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Person",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/persons/:person",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"persons",
+						":person"
+					],
+					"variable": [
+						{
+							"key": "person",
+							"value": "16275"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Person / Matches",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/persons/:person/matches?limit=40",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"persons",
+						":person",
+						"matches"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "40"
+						}
+					],
+					"variable": [
+						{
+							"key": "person",
+							"value": "16275"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Match",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/matches/:match",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"matches",
+						":match"
+					],
+					"variable": [
+						{
+							"key": "match",
+							"value": "327117"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Match List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Unfold-Lineups",
+						"value": "true",
+						"type": "text"
+					},
+					{
+						"key": "X-Unfold-Bookings",
+						"value": "false",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "X-Unfold-Subs",
+						"value": "false",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "X-Unfold-Goals",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/v4/matches",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"matches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Match / Head2Head",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v4/matches/:match/head2head?limit=15",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v4",
+						"matches",
+						":match",
+						"head2head"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "15"
+						}
+					],
+					"variable": [
+						{
+							"key": "match",
+							"value": "327125"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "X-Auth-Token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://api.football-data.org/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "6ef66c618d3d4a738a4493acaa1467e1",
+			"type": "string"
+		}
+	]
+}

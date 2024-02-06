@@ -1,0 +1,50 @@
+version: "3.9"
+services:
+  api:
+    depends_on:
+      - postgresql
+    restart: always
+    build:
+      context: .
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: postgres
+      FOOTBALL_SERVICE: 'https://api.football-data.org'
+      FOOTBALL_TOKEN: ${FOOTBALL_TOKEN}
+      DATABASE_NAME: football
+      NODE_ENV: development
+      PORT: 4000
+    ports:
+      - '4000:4000'
+    networks:
+      - football-network
+
+  postgresql:
+    image: postgres
+    container_name: postgres
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: football
+    volumes:
+      - football:/var/lib/postgresql/data
+    networks:
+      - football-network
+
+  
+
+#Docker Networks
+networks:
+  football-network:
+    driver: bridge
+
+#Volumes
+volumes:
+  football:
+    driver: local

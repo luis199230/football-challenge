@@ -1,0 +1,491 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "football-data.org v4",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": ""
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "apikeyAuth": {
+                "type": "http",
+                "scheme": "apikey"
+            }
+        }
+    },
+    "security": [
+        {
+            "apikeyAuth": []
+        }
+    ],
+    "paths": {
+        "/v4/areas/{area}": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Area",
+                "parameters": [
+                    {
+                        "name": "area",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true,
+                        "example": "2220"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/areas": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Area List",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/competitions/{competition}": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Competition",
+                "parameters": [
+                    {
+                        "name": "competition",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "example": "PL"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/competitions": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Competition List",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/competitions/{competition}/standings": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Competition / Standings",
+                "parameters": [
+                    {
+                        "name": "season",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "2010"
+                    },
+                    {
+                        "name": "matchday",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "3"
+                    },
+                    {
+                        "name": "competition",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "example": "PL"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/competitions/{competition}/matches": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Competition / Matches",
+                "parameters": [
+                    {
+                        "name": "matchday",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "23"
+                    },
+                    {
+                        "name": "competition",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "example": "BL1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/competitions/{competition}/teams": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Competition / Teams",
+                "parameters": [
+                    {
+                        "name": "competition",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "example": "MLS"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/competitions/{competition}/scorers": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Competition / Scorer",
+                "parameters": [
+                    {
+                        "name": "competition",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "example": "PL"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/teams/{team}": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Team",
+                "parameters": [
+                    {
+                        "name": "team",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true,
+                        "example": "90"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/teams": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Team List",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "100"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "100"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/teams/{team}/matches": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Team / Matches",
+                "parameters": [
+                    {
+                        "name": "team",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true,
+                        "example": "19"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/persons/{person}": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Person",
+                "parameters": [
+                    {
+                        "name": "person",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true,
+                        "example": "16275"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/persons/{person}/matches": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Person / Matches",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "40"
+                    },
+                    {
+                        "name": "person",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true,
+                        "example": "16275"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/matches/{match}": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Match",
+                "parameters": [
+                    {
+                        "name": "match",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true,
+                        "example": "327117"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/matches": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Match List",
+                "parameters": [
+                    {
+                        "name": "X-Unfold-Lineups",
+                        "in": "header",
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "example": "true"
+                    },
+                    {
+                        "name": "X-Unfold-Goals",
+                        "in": "header",
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "example": "true"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v4/matches/{match}/head2head": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "summary": "Match / Head2Head",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "15"
+                    },
+                    {
+                        "name": "match",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true,
+                        "example": "327125"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

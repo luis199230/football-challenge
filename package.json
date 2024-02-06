@@ -1,0 +1,66 @@
+{
+  "name": "football-challenge",
+  "version": "1.0.0",
+  "description": "Football API challenge with Graphql",
+  "main": "index.js",
+  "scripts": {
+    "build:p2openapi": "p2o ./postman.json -f ./openapi.json -o options.json",
+    "build:openapi": "ts-node ./src/util/buildOpenAPI",
+    "build:gql-types": "graphql-codegen --config ./src/util/buildGqlSchema.ts",
+    "build": "tsc",
+    "start": "node dist/server/index.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "graphql",
+    "football",
+    "api",
+    "typescript"
+  ],
+  "author": "Luis Benavides",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.10.0",
+    "axios": "^1.6.7",
+    "class-transformer": "^0.5.1",
+    "dotenv": "^16.4.1",
+    "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6",
+    "pg": "^8.11.3",
+    "reflect-metadata": "^0.2.1",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "@graphql-codegen/add": "^5.0.0",
+    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/introspection": "4.0.0",
+    "@graphql-codegen/typescript": "4.0.1",
+    "@graphql-codegen/typescript-document-nodes": "^4.0.1",
+    "@graphql-codegen/typescript-resolvers": "4.0.1",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^18.16.0",
+    "jest": "^29.7.0",
+    "openapi-typescript-codegen": "^0.27.0",
+    "postman-to-openapi": "^3.0.1",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
